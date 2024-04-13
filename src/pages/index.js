@@ -9,7 +9,10 @@ import {
 export default function Home() {
   return (
     <main className={styles.main}>
-     
+     <div className=" bg-red-200">
+		nbolasdasss
+
+	 </div>
     </main>
   );
 }

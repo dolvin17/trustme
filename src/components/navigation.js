@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-import NearLogo from 'public/near-logo.svg';
+import NearLogo from 'public/wisel.svg';
 import { useWallet } from '@/wallets/wallet-selector';
 
 export const Navigation = () => {
@@ -22,10 +22,10 @@ export const Navigation = () => {
   }, [signedAccountId, logOut, logIn, setAction, setLabel]);
 
   return (
-    <nav className="navbar navbar-expand-lg">
+    <nav className="navbar navbar-expand-lg bg-white">
       <div className="container-fluid">
         <Link href="/" passHref legacyBehavior>
-          <Image priority src={NearLogo} alt="NEAR" width="30" height="24" className="d-inline-block align-text-top" />
+          <Image priority src={NearLogo} alt="NEAR" width="150" height="150" className="d-inline-block align-text-top" />
         </Link>
         <div className='navbar-nav pt-1'>
           <button className="btn btn-secondary" onClick={action} > {label} </button>

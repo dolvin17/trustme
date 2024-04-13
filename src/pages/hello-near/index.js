@@ -11,14 +11,14 @@ const CONTRACT = HelloNearContract[NetworkId];
 export default function HelloNear() {
   const { signedAccountId, viewMethod, callMethod } = useWallet();
 
-  const [greeting, setGreeting] = useState("loading...");
+  const [votting, setvotting] = useState("loading...");
   const [loggedIn, setLoggedIn] = useState(false);
   const [showSpinner, setShowSpinner] = useState(false);
 
   useEffect(() => {
     viewMethod &&
-      viewMethod(CONTRACT, "get_greeting", {}).then((greeting) =>
-        setGreeting(greeting)
+      viewMethod(CONTRACT, "vote", {}).then((votting) =>
+        setvotting(votting)
       );
   }, [viewMethod]);
 
@@ -26,9 +26,9 @@ export default function HelloNear() {
     setLoggedIn(!!signedAccountId);
   }, [signedAccountId]);
 
-  const saveGreeting = async () => {
+  const savevotting = async () => {
     setShowSpinner(true);
-    await callMethod(CONTRACT, "set_greeting", { greeting });
+    await callMethod(CONTRACT, "set_votting", { votting });
     setShowSpinner(false);
   };
 
@@ -44,19 +44,19 @@ export default function HelloNear() {
       <div className={styles.center}>
         <h1 className="w-100">
           {" "}
-          The contract says: <code>{greeting}</code>{" "}
+          The contract says: <code>{votting}</code>{" "}
         </h1>
         <div className="input-group" hidden={!loggedIn}>
           <input
             type="text"
             className="form-control w-20"
-            placeholder="Store a new greeting"
+            placeholder="Store a new votting"
             onChange={(t) => {
-              setGreeting(t.target.value);
+              setvotting(t.target.value);
             }}
           />
           <div className="input-group-append">
-            <button className="btn btn-secondary" onClick={saveGreeting}>
+            <button className="btn btn-secondary" onClick={savevotting}>
               <span hidden={showSpinner}> Save </span>
               <i
                 className="spinner-border spinner-border-sm"
@@ -66,7 +66,7 @@ export default function HelloNear() {
           </div>
         </div>
         <div className="w-100 text-end align-text-center" hidden={loggedIn}>
-          <p className="m-0"> Please login to change the greeting </p>
+          <p className="m-0"> Please login to change the votting </p>
         </div>
       </div>
       <div className={styles.grid}>

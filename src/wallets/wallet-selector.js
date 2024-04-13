@@ -31,7 +31,7 @@ export function useInitWallet({ createAccessKeyFor, networkId }) {
   useEffect(() => {
     const selector = setupWalletSelector({
       network: networkId,
-      modules: [setupMyNearWallet(), setupHereWallet()]
+      modules: [setupMyNearWallet()]
     });
 
     setSelector(selector);
