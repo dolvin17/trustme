@@ -17,7 +17,9 @@ export default function Submit() {
 	 <p className="p-3 mb-8">
 	 Proposal candidates can be created by anyone. If a candidate receives enough signatures by Weasel voters, it can be promoted to a proposal.
 	 </p>
+	 <Link href="/create">
 	 <button className="p-2 text-white bg-black"> Create a Candidate </button>
+	 </Link>
     </div>
 			</>
   );
