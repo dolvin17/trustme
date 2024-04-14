@@ -12,11 +12,11 @@ export default function Proposal() {
         decide if some info should be public or no. A minimum of 3 Weasel is
         required to submit proposals.
       </p>
-	  <div className="rounded-xl border-2 m-1 p-1 mt-4 border-black flex flex-row flex-grow">
+	  <div className="rounded-xl   bg-white border-2 m-1 p-1 mt-4 border-black flex flex-row flex-grow">
 	<p><strong>Treasury:</strong> 12033333.33 WSL
 		</p>
 		<p><strong>Value:</strong>  $16,446,139.00</p>
-		<p className="text-xs"> *This treasury exists for Weasel DAO participants to allocate resources for the long-term growth and prosperity of the Weasel project.</p>
+		<p className="text-xs w-[500px]"> *This treasury exists for Weasel DAO participants to allocate resources for the long-term growth and prosperity of the Weasel project.</p>
 	  </div>
     </div>
   );

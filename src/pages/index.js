@@ -6,13 +6,15 @@ import {
   HelloNearCard,
 } from "@/components/cards";
 import Proposal from "@/components/proposal";
-import Candidates from "@/components/candidates";
+import SecondNav from "@/components/secondnav";
+
 
 export default function Home() {
   return (
 	<>
  <Proposal />
- <Candidates />
+<SecondNav />
+
 	</>
   );
 }
