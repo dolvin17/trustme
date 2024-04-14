@@ -13,7 +13,7 @@ export default function SecondNav() {
         <Link href="/candidates" className="px-2 hover:underline hover:font-black">
           Candidates
         </Link>
-        <Link href="/" className="px-2 hover:underline hover:font-black">
+        <Link href="/submit" className="px-2 hover:underline hover:font-black">
           Submit Proposal
         </Link>
       </div>
