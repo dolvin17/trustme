@@ -1,13 +1,24 @@
 import Proposal from "@/components/proposal";
 import SecondNav from "@/components/secondnav";
 import Link from "next/link";
+import { useState } from 'react';
 
 export default function Create() {
+	const [isModalOpen, setIsModalOpen] = useState(false); // Modal open/closed state
+	const handleCreateCandidate = () => {
+		// Simulate candidate creation (replace with actual logic)
+		console.log('Candidate created!');
+		setIsModalOpen(true); // Open modal on successful creation
+	  };
+	
+	  const handleCloseModal = () => setIsModalOpen(false);
   return (
     <>
-      <div className="fixed flex flex-col items-center justify-center w-1/2 mx-auto inset-2 window">
-        <strong className="text-3xl">Create proposal candidate</strong>
-        <div className="bg-white border-2 border-black rounded-xl">
+      <div className="fixed flex flex-col items-center justify-center w-1/2 mx-auto mt-16 inset-2 window">
+        <strong className="text-3xl text-black">
+          Create proposal candidate
+        </strong>
+        <div className="mb-16 bg-white border-2 border-black rounded-xl">
           <p className="p-4 text-lg text-black ">
             Proposal candidates can be created by anyone. If a candidate
             receives enough signatures by Weasel voters, it can be promoted to a
@@ -18,7 +29,7 @@ export default function Create() {
           <strong className="text-xl text-black ">Candidate</strong>
           <input
             placeholder="title"
-            className="text-xl text-gray-200 bg-transparent"
+            className="text-xl text-black bg-transparent"
           ></input>
           <br />
           <br />
@@ -28,7 +39,7 @@ export default function Create() {
 			Insert your summary here
 			
 		"
-            className="py-8 text-xl text-gray-200 bg-transparent"
+            className="py-8 text-xl text-black bg-transparent"
           ></input>
           <input
             placeholder="##Methodology
@@ -36,7 +47,7 @@ export default function Create() {
 			Insert your methodology here
 			
 		"
-            className="py-8 text-xl text-gray-200 bg-transparent"
+            className="py-8 text-xl text-black bg-transparent"
           ></input>
           <input
             placeholder="##Conclusion
@@ -44,15 +55,26 @@ export default function Create() {
 			Insert your conclusion here
 			
 		"
-            className="py-8 text-xl text-gray-200 bg-transparent"
+            className="py-8 text-xl text-black bg-transparent"
           ></input>
-          <Link href="/create">
+          <Link href="/create " onClick={handleCreateCandidate}>
             <button className="p-4 mt-0 text-white bg-black">
               {" "}
               Create a Candidate{" "}
             </button>
           </Link>
         </div>
+		{isModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-500 bg-opacity-75">
+            <div className="p-4 bg-white rounded-lg shadow-md">
+              <h2 className="mb-2 text-xl font-bold">Success!</h2>
+              <p className="text-lg text-black">Candidate created successfully.</p>
+              <button className="p-2 text-white bg-green-500 rounded-lg" onClick={handleCloseModal}>
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
