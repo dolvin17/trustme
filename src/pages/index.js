@@ -5,14 +5,14 @@ import {
   HelloComponentsCard,
   HelloNearCard,
 } from "@/components/cards";
+import Proposal from "@/components/proposal";
+import Candidates from "@/components/candidates";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-     <div className=" bg-red-200">
-		nbolasdasss
-
-	 </div>
-    </main>
+	<>
+ <Proposal />
+ <Candidates />
+	</>
   );
 }
